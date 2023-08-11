@@ -1,4 +1,4 @@
-FROM node:6.14.4
+FROM node:14-slim
 MAINTAINER "S M Y ALTAMASH" "smy.altamash@gmail.com"
 WORKDIR /home/enc
 COPY . /home/enc
