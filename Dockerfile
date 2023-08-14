@@ -6,37 +6,17 @@ WORKDIR /home/enc
 
 COPY . /home/enc
 
-RUN npm -v
-
 RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list
-
- 
 
 RUN apt update
 
-RUN apt install -y  python3 make g++
-
- 
-
-RUN apt install -y zip
-
-# make g++
-
- 
-
-#RUN npm install -g node-gyp
-
- 
+RUN apt install -y zip python make g++
 
 RUN npm install
 
- 
-
-#    && apt remove --purge -y --force-yes python make g++ \
-
-#    && apt-get autoremove -y  \
-
-#    && rm -rf /var/lib/apt/lists/*
+RUN  apt remove --purge -y --force-yes python make g++ \
+    && apt-get autoremove -y  \
+    && rm -rf /var/lib/apt/lists/*
 
 EXPOSE 8013
 
